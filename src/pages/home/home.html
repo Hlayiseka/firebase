@@ -1,0 +1,50 @@
+<ion-header >
+  <ion-navbar hideBackButton>
+    <ion-title>
+      <h3 style="text-align: center">
+        HOTEL APP
+      </h3>
+        <div>
+            <button ion-button clear (click)="userRegister()" style="color: white">Register</button>
+            <button ion-button clear (click)="userLogin()" style="color: white">Login</button>
+        </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home" padding>
+  <div class="container">
+    <div class="box" value="About Hotel" >
+      <a href="" ><img src="../../assets/imgs/d3.jpg" alt="" class="thumb"></a>
+    </div>
+    <div class="box" value="Gallery" (click)="userGallery()">
+        <a href="" ><img src="../../assets/imgs/d4.jpg" alt="" class="thumb"></a>
+    </div>
+
+    <div class="box" value="Rooms & Suits" (click)="userRooms()">
+      <a href="" ><img src="../../assets/imgs/d5.jpg" alt="" class="thumb"></a>
+    </div>
+    <div class="box" value="News & Events" >
+      <a href=""><img src="../../assets/imgs/d6.jpg" alt="" class="thumb"></a>
+    </div>
+
+    <div class="box" value="Restaurants & Bars" >
+      <a href=""><img src="../../assets/imgs/d7.jpg" alt="" class="thumb"></a>
+    </div>
+    <div class="box" value="Room Service" >
+      <a href=""><img src="../../assets/imgs/d8.jpg" alt="" class="thumb"></a>
+    </div>
+
+    <div class="box" value="Online Booking" (click)="userRooms()">
+      <a href=""><img src="../../assets/imgs/d9.jpg" alt="" class="thumb"></a>
+    </div>
+    <div class="box" value="Contacts" >
+      <a href=""><img src="../../assets/imgs/d10.jpg" alt="" class="thumb"></a>
+    </div>
+  </div>
+  <!-- <div>
+    <button ion-button clear (click)="userRegister()">Register</button>
+    <button ion-button clear (click)="userLogin()">Login</button>
+  </div> -->
+
+</ion-content>

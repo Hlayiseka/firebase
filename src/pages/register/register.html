@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center">Register</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="home" padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="person.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Surname</ion-label>
+      <ion-input type="text" [(ngModel)]="person.surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Age</ion-label>
+      <ion-input type="number" [(ngModel)]="person.age"></ion-input>
+    </ion-item>
+    <div padding>
+      <button ion-button full round (click)="userRegister();add({name:person.name, surname:person.surname, age:person.age})">Register</button>
+    </div>
+  </ion-list>
+
+  
+    <!-- <input type="text" [(ngModel)]="person.name" placeholder="Enter your name">
+    <input type="text" [(ngModel)]="person.surname" placeholder="Enter your surname">
+    <input type="text" [(ngModel)]="person.age" placeholder="Enter your age">
+  
+    <button (click)="add({name:person.name, surname:person.surname, age:person.age})">save</button>
+  
+    <ion-list>
+      <ion-item style="text-align: center" *ngFor="let person of MyArray">
+        <p>Name: {{person.name}}</p><br>
+        <p>Surname: {{person.surname}}</p><br>
+        <p>Age: {{person.age}}</p><br>
+        <button ion-button round (click)="delete(person.key)">delete</button>
+      </ion-item>
+    </ion-list>  -->
+    
+  
+</ion-content>

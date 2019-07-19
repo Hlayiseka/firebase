@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center">login</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content class="home" padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+    <div padding>
+      <button ion-button full round (click)="userLogin()">Login</button>
+      <button ion-button clear (click)="userRegister()" style="color: white">Register</button>
+    </div>
+  </ion-list>
+</ion-content>
