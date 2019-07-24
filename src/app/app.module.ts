@@ -11,6 +11,7 @@ import { RegisterPage } from '../pages/register/register';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { RoomsPage } from '../pages/rooms/rooms';
 import { BookPage } from '../pages/book/book';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BookPage } from '../pages/book/book';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

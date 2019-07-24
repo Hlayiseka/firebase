@@ -1,14 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController, PopoverController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import * as firebase from 'firebase';
 import { SnapShots }  from '../../app/Env';
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Camera, CameraOptions } from '@ionic-native/camera'; 
 
 @IonicPage()
 @Component({
@@ -22,12 +17,22 @@ export class RegisterPage {
   @ViewChild('name') name;
   @ViewChild('surname') surname;
   @ViewChild('age') age;
+  @ViewChild('img') img;
 
   MyArray = [];
   ref = firebase.database().ref('Hotels/');
   person = {};
+  url: string;
+  captureDataUrl: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public alertCtrl: AlertController, 
+    private camera: Camera, 
+    public navParams: NavParams,
+    public loading: LoadingController,
+    public popover: PopoverController
+    ) {
+
     this.ref.on('value', res => {
       this.MyArray = SnapShots(res);
     });
@@ -60,5 +65,52 @@ export class RegisterPage {
     })
     console.log(this.user.value);
 
+  }
+
+  takePhoto(sourcetype: number) {
+    const options: CameraOptions = {
+      quality: 50,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      sourceType: sourcetype,
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation: true,
+      targetHeight: 500,
+      targetWidth: 500
+    }
+    
+    this.camera.getPicture(options).then((captureDataUrl) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     let imageUploaded = 'data:image/jpeg;base64,' + captureDataUrl;
+     
+     this.captureDataUrl = imageUploaded;
+     
+    }, (err) => {
+     // Handle error
+    });
+  }
+
+  upload() {
+    let loaders = this.loading.create({
+      content: 'Uploading, Please wait...',
+      duration: 3000
+    })
+    let storageRef = firebase.storage().ref();
+​
+    const filename = Math.floor(Date.now() / 1000);
+​
+    const imageRef = storageRef.child(`my-hotel/${filename}.jpg`);
+    loaders.present()
+    imageRef.putString(this.captureDataUrl, firebase.storage.StringFormat.DATA_URL)
+    .then((snapshot) => {
+      console.log('image uploaded');
+      this.url = snapshot.downloadURL
+      let alert = this.alertCtrl.create({
+        title: 'Image Upload', 
+        subTitle: 'Image Uploaded to firebase',
+        buttons: ['Ok']
+      }).present();
+    })
   }
 }
