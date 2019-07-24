@@ -5,6 +5,7 @@ import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
 import { GalleryPage } from '../gallery/gallery';
 import { RoomsPage } from '../rooms/rooms';
+import { AddPage } from '../add/add';
 
 @Component({
   selector: 'page-home',
@@ -31,5 +32,8 @@ export class HomePage {
   }
   userRooms() {
     this.navCtrl.push(RoomsPage);
+  }
+  add() {
+    this.navCtrl.push(AddPage);
   }
 }

@@ -1,44 +1,33 @@
 
 <ion-header>
-  <ion-navbar>
-    <ion-title style="text-align: center">Rooms</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <ion-card>
-    <img src="../../assets/imgs/d12.jpg" />
-    <div class="card title">Single Suite</div>
-    <div class="card subtitle">
-      R1199.00 a Night
-      <button ion-button round (click)="userBook()">Book</button>
-    </div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/d11.jpg" />
-    <div class="card title">Double Suite</div>
-    <div class="card subtitle"> 
-      R1499.00 a Night
-      <button ion-button round (click)="userBook()">Book</button>
-    </div>
-  </ion-card>
-
-  <ion-card>
-      <img src="../../assets/imgs/d10.jpg" />
-      <div class="card title">Double Suite</div>
-      <div class="card subtitle">
-        R1299.00 a Night
-        <button ion-button round (click)="userBook()">Book</button>
+    <ion-navbar>
+      <ion-title style="text-align:center">Add Room</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list >
+      <div (click)="takePhoto(0)">
+          <img [src]="myphoto" alt="" *ngIf="myphoto"> <ion-icon name="attach"></ion-icon>
       </div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/d14.jpg" />
-    <div class="card title">VIP Suite</div>
-    <div class="card subtitle">
-      R1999.00 a Night
-      <button ion-button round (click)="userBook()">Book</button>
+      <ion-item >
+        <ion-label floating>Price</ion-label>
+        <ion-input type="number" [(ngModel)]="room.price"></ion-input>
+      </ion-item>
+  
+      <ion-item >
+        <ion-label floating>Room Type</ion-label>
+        <ion-input type="text" [(ngModel)]="room.roomtype"></ion-input>
+      </ion-item>
+  
+      <ion-item >
+          <ion-label floating>Description</ion-label>
+          <ion-input type="text" [(ngModel)]="room.description"></ion-input>
+        </ion-item>
+      
+    </ion-list>
+    <div>
+      <button ion-button full round (click)="createRooms(room)">Save</button>
     </div>
-  </ion-card>
-</ion-content>
+  </ion-content>
+  

@@ -18,25 +18,21 @@ import { BookPage } from '../book/book';
 export class RoomsPage {
 
   MyArray = [];
-  ref = firebase.database().ref('Hotels/');
-  room = {};
+  ref = firebase.database().ref('rooms/');
+  rooms: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.ref.on('value', res => {
-      this.MyArray = SnapShots(res);
+      this.rooms = SnapShots(res);
+     
     }); 
+    console.log(this.rooms);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RoomsPage');
   }
-  add(obj){
-    if(obj!==null && obj!==undefined){
-      let room = this.ref.push();
-      room.set(obj);
-      this.room = {};
-    }
-  }
+
   userRooms() {
     this.navCtrl.push(RoomsPage);
   }

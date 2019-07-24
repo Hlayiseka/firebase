@@ -12,6 +12,7 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { RoomsPage } from '../pages/rooms/rooms';
 import { BookPage } from '../pages/book/book';
 import { Camera } from '@ionic-native/camera';
+import { AddPage } from '../pages/add/add';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Camera } from '@ionic-native/camera';
     RegisterPage,
     GalleryPage,
     RoomsPage,
-    BookPage
+    BookPage,
+    AddPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { Camera } from '@ionic-native/camera';
     RegisterPage,
     GalleryPage,
     RoomsPage,
-    BookPage
+    BookPage,
+    AddPage
   ],
   providers: [
     StatusBar,

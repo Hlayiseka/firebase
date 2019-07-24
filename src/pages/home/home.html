@@ -11,37 +11,42 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content class="home" padding>
   <div class="container">
-    <div class="box" value="About Hotel" >
-      <a href="" ><img src="../../assets/imgs/d3.jpg" alt="" class="thumb"></a>
+    <div class="box" value="About Hotel">
+      <a href=""><img src="../../assets/imgs/d3.jpg" alt="" class="thumb"></a>
     </div>
-    <div class="box" value="Gallery" (click)="userGallery()">
-        <a href="" ><img src="../../assets/imgs/d4.jpg" alt="" class="thumb"></a>
+    <div class="box" value="Add Rooms" (click)="add()">
+      <a href=""><img src="../../assets/imgs/d4.jpg" alt="" class="thumb"></a>
     </div>
 
-    <div class="box" value="Rooms & Suits" (click)="userRooms()">
-      <a href="" ><img src="../../assets/imgs/d5.jpg" alt="" class="thumb"></a>
+    <div class="box" value="View Rooms & Suits" (click)="userRooms()">
+      <a href=""><img src="../../assets/imgs/d5.jpg" alt="" class="thumb"></a>
     </div>
-    <div class="box" value="News & Events" >
+    <div class="box" value="News & Events">
       <a href=""><img src="../../assets/imgs/d6.jpg" alt="" class="thumb"></a>
     </div>
 
-    <div class="box" value="Restaurants & Bars" >
+    <div class="box" value="Restaurants & Bars">
       <a href=""><img src="../../assets/imgs/d7.jpg" alt="" class="thumb"></a>
     </div>
-    <div class="box" value="Room Service" >
+    <div class="box" value="Gallery" (click)="userGallery()">
       <a href=""><img src="../../assets/imgs/d8.jpg" alt="" class="thumb"></a>
     </div>
 
     <div class="box" value="Online Booking" (click)="userRooms()">
       <a href=""><img src="../../assets/imgs/d9.jpg" alt="" class="thumb"></a>
     </div>
-    <div class="box" value="Contacts" >
+    <div class="box" value="Contacts">
       <a href=""><img src="../../assets/imgs/d10.jpg" alt="" class="thumb"></a>
     </div>
+    <!-- <div>
+      <button ion-button (click)="add()" block>Add</button>
+    </div> -->
   </div>
+
+
+
   <!-- <div>
     <button ion-button clear (click)="userRegister()">Register</button>
     <button ion-button clear (click)="userLogin()">Login</button>
