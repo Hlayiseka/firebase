@@ -26,11 +26,11 @@
       <ion-input type="number" [(ngModel)]="person.age"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label floating></ion-label>
       <ion-input type="file" [(ngModel)]="person.img"><button ion-button (click)="upload(1)"></button>Upload Image</ion-input>
     </ion-item>
-    
+     -->
     <div padding>
       <button ion-button full round (click)="userRegister();add({name:person.name, surname:person.surname, age:person.age, img:person.img})">Register</button>
     </div>
@@ -44,7 +44,7 @@
   
     <button (click)="add({name:person.name, surname:person.surname, age:person.age})">save</button>
    -->
-    <ion-list>
+    <!-- <ion-list>
       <ion-item style="text-align: center" *ngFor="let person of MyArray">
         <p>Name: {{person.name}}</p><br>
         <p>Surname: {{person.surname}}</p><br>
@@ -52,7 +52,7 @@
         <p>Image: {{person.img}}</p><br>
         <button ion-button round (click)="delete(person.key)">delete</button>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
     
   
 </ion-content>

@@ -1,33 +1,23 @@
 
 <ion-header>
-    <ion-navbar>
-      <ion-title style="text-align:center">Add Room</ion-title>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center">Rooms</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list>
+    <ion-item style="text-align: center" *ngFor="let room of rooms">
   
-  <ion-content padding>
-    <ion-list >
-      <div (click)="takePhoto(0)">
-          <img [src]="myphoto" alt="" *ngIf="myphoto"> <ion-icon name="attach"></ion-icon>
-      </div>
-      <ion-item >
-        <ion-label floating>Price</ion-label>
-        <ion-input type="number" [(ngModel)]="room.price"></ion-input>
-      </ion-item>
+      <img src="{{room.image}}" alt="" style="height: 50%; width: 80%">
+      <p style="color: teal">Doom Type: {{room.RoomType}}</p><br>
+      <p>Price: R{{room.Price}}</p><br>
+      <p>Description: {{room.Description}}</p><br>
   
-      <ion-item >
-        <ion-label floating>Room Type</ion-label>
-        <ion-input type="text" [(ngModel)]="room.roomtype"></ion-input>
-      </ion-item>
-  
-      <ion-item >
-          <ion-label floating>Description</ion-label>
-          <ion-input type="text" [(ngModel)]="room.description"></ion-input>
-        </ion-item>
-      
-    </ion-list>
-    <div>
-      <button ion-button full round (click)="createRooms(room)">Save</button>
-    </div>
-  </ion-content>
-  
+      <button ion-button round (click)="userBook()">Book</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
