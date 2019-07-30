@@ -25,14 +25,13 @@
       <ion-label floating>Age</ion-label>
       <ion-input type="number" [(ngModel)]="person.age"></ion-input>
     </ion-item>
-
-    <!-- <ion-item>
-      <ion-label floating></ion-label>
-      <ion-input type="file" [(ngModel)]="person.img"><button ion-button (click)="upload(1)"></button>Upload Image</ion-input>
+    <ion-item>
+      <ion-label floating>Cell Number</ion-label>
+      <ion-input type="number" [(ngModel)]="person.cell"></ion-input>
     </ion-item>
-     -->
+
     <div padding>
-      <button ion-button full round (click)="userRegister();add({name:person.name, surname:person.surname, age:person.age, img:person.img})">Register</button>
+      <button ion-button full round (click)="userRegister();add({name:person.name, surname:person.surname, age:person.age, cell:person.cell})">Register</button>
     </div>
 
   </ion-list>

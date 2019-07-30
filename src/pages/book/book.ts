@@ -37,7 +37,7 @@ export class BookPage {
     }
     let alert = this.alertctrl.create(
       {
-      subTitle: 'You have successfully booked a room',
+      subTitle: 'You have successfully booked for a room',
       buttons: ['Ok']
       }
     );

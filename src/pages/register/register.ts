@@ -17,7 +17,7 @@ export class RegisterPage {
   @ViewChild('name') name;
   @ViewChild('surname') surname;
   @ViewChild('age') age;
-  @ViewChild('img') img;
+  @ViewChild('cell') cell;
 
   MyArray = [];
   ref = firebase.database().ref('Hotels/');
